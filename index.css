@@ -150,7 +150,51 @@
 }
 
 .product-card__button:disabled {
+    font-size: 0;
+    line-height: 0;
+}
+
+.product-card__button:disabled:after {
+    content: 'ЗАКОНЧИЛОСЬ';
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    margin: 0;
+    width: 322px;
+    height: 48px;
+    border-radius: 12px;
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 48px;
+    text-align: center;
     color: var(--genaral-white);
     border: 2px solid var(--button-disabled-color);
     background-color: var(--button-disabled-color);
+}
+
+/* some media parameters for another gadget types */
+
+@media only screen and (max-width: 1024px) {
+    .product-cards-container {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 100%;
+        min-height: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card__title {
+        margin: 20px;
+    }
 }
